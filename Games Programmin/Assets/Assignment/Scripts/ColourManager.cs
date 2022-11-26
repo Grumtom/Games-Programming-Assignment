@@ -20,11 +20,11 @@ public class ColourManager : MonoBehaviour
     public float   CHue = 0f;
     public float   DHue = 125f;
 
-    private Camera camera;
+    private Camera Camera;
 
     private void Start()
     {
-        camera = Camera.main;
+        Camera = Camera.main;
         setColour(); // resets the materials at the start of the game
     }
 
@@ -54,7 +54,7 @@ public class ColourManager : MonoBehaviour
         {
             DMaterials[I].color = DBaseMaterials[I].color;
         }
-        camera.backgroundColor = BMaterials[0].color;
+        Camera.backgroundColor = BMaterials[0].color;
     }
 
     public void updateHue(float amount)
@@ -90,7 +90,7 @@ public class ColourManager : MonoBehaviour
             H += amount;
             DMaterials[I].color = Color.HSVToRGB(H, S, V);
         }
-        camera.backgroundColor = BMaterials[0].color;
+        Camera.backgroundColor = BMaterials[0].color;
     }
 }
 
